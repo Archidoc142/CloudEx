@@ -13,6 +13,6 @@ class GenreFilm extends Model
     public $timestamps = false;
     protected $fillable = [
         'id_film',
-        'id_genre'
+        'id_genre',
     ];
 }

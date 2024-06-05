@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SaisonAnime extends Model
 {
@@ -15,4 +16,9 @@ class SaisonAnime extends Model
     protected $fillable = [
         'id_anime'
     ];
+
+    public function anime(): BelongsTo
+    {
+        return $this->belongsTo(Anime::class, 'id_anime');
+    }
 }

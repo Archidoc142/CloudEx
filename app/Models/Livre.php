@@ -15,4 +15,9 @@ class Livre extends Model
     protected $fillable = [
         'nom'
     ];
+
+    public function genre()
+    {
+        return $this->belongsToMany(Genre::class, 'genre_livres', 'id_livre', 'id_genre');
+    }
 }

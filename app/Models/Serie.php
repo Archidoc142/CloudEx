@@ -15,4 +15,9 @@ class Serie extends Model
     protected $fillable = [
         'nom',
     ];
+
+    public function genre()
+    {
+        return $this->belongsToMany(Genre::class, 'genre_series', 'id_serie', 'id_genre');
+    }
 }

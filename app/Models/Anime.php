@@ -15,4 +15,9 @@ class Anime extends Model
     protected $fillable = [
         'nom',
     ];
+
+    public function genre()
+    {
+        return $this->belongsToMany(Genre::class, 'genre_animes', 'id_anime', 'id_genre');
+    }
 }
